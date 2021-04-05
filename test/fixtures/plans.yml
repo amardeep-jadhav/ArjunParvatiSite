@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  start_date: 2021-04-04
+  end_date: 2021-04-04
+  min_investment: 1.5
+  max_investment: 1.5
+  return_percentage: 1.5
+  is_active: false
+  members_allowed: 
+
+two:
+  description: MyString
+  start_date: 2021-04-04
+  end_date: 2021-04-04
+  min_investment: 1.5
+  max_investment: 1.5
+  return_percentage: 1.5
+  is_active: false
+  members_allowed: 
