@@ -8,9 +8,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+    
   </head>
 
   <body>
+  <div class="main-wrapper">
+  <div class="wrapper">
     <% unless flash.empty? %>
       <script type="text/javascript">
           <% flash.each do |f| %>
@@ -20,5 +24,7 @@
       </script>
     <% end %>
     <%= yield %>
+    </div>
+    </div>
   </body>
 </html>
