@@ -27,7 +27,13 @@ line-height: 40px;
 }
 
 .nav-item a:hover,.nav-item.active a{
-    background-color: #6c757d!important;
+    background-color: #007bff!important;
+    border-radius: 4px;
+    color: #eeeeee !important;
+}
+.nav-item.loginBtn a:hover,
+.nav-item.signUpBtn a:hover{
+    background-color: transparent!important;
     border-radius: 4px;
     color: #eeeeee !important;
 }
