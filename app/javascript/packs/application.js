@@ -11,8 +11,8 @@ import "channels"
 import "bootstrap"
 import "@fortawesome/fontawesome-free/css/all"
 
-import 'src/stylesheets/application'
-const images = require.context('../images', true)
+// import 'src/stylesheets/application'
+// const images = require.context('../images', true)
 
 Rails.start()
 Turbolinks.start()
