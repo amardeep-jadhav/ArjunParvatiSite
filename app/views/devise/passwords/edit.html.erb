@@ -1,25 +1,73 @@
-<h2>Change your password</h2>
+<!-- <h2>Change your password</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-  <%= f.hidden_field :reset_password_token %>
+<%#= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%#= render "devise/shared/error_messages", resource: resource %>
+  <%#= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
+    <%#= f.label :password, "New password" %><br />
+    <%# if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    <%# end %>
+    <%#= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%#= f.label :password_confirmation, "Confirm new password" %><br />
+    <%#= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Change my password" %>
+    <%#= f.submit "Change my password" %>
   </div>
-<% end %>
+<%# end %> -->
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %>
+
+
+
+<div class="container-fluid">
+  <div class="row vh-100 bg-white">
+    <div class="col-md-5 d-flex">
+      <div class="login-wrapper m-auto">
+        <div class="brand-wrapper mb-5">
+        <img class="navbar-brand mr-auto logo" src=<%=asset_path('logo.jpeg')%> style="width:152px;height:120px;" />
+        </div>
+        <h3 class="text-dark mb-3">Change your password</h3>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+          <%= f.hidden_field :reset_password_token %>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
+              </div>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control", placeholder: "New Password"%>               
+            </div>
+            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+          </div>
+           <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
+              </div>
+              <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class: "form-control", placeholder: "Password Confirmation"%>               
+            </div>
+            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+          </div>
+           <%= f.submit "Send me reset password instructions", class: "btn btn-primary btn-block btn-lg mb-3" %>
+        <%end%>
+        <p class="login-wrapper-footer-text" style="margin-bottom: 8px">Don't have an account? 
+          <%= link_to "Register here", new_registration_path(resource_name), class: "text-danger" %>
+        </p>
+         <p class="login-wrapper-footer-text">You already have an account? 
+          <%= link_to "Sign in", new_session_path(resource_name), class: "text-danger" %>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-7 px-0 d-none d-md-block">
+    <img class="mr-auto login-img" alt="login image" src=<%=asset_path('login-bg3.jpg')%> />
+    </div>
+  </div>
+</div>

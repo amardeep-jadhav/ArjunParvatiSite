@@ -1,7 +1,7 @@
-<h2>Sign up</h2>
+<!-- <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%#= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -26,4 +26,61 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%#= render "devise/shared/links" %> -->
+
+
+<div class="container-fluid">
+  <div class="row vh-100 bg-white">
+    <div class="col-md-5 d-flex">
+      <div class="login-wrapper m-auto">
+        <div class="brand-wrapper mb-5">
+        <img class="navbar-brand mr-auto logo" src=<%=asset_path('logo.jpeg')%> style="width:152px;height:120px;" />
+        </div>
+        <h3 class="text-dark mb-3">Welcome!</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
+              </div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>               
+            </div>
+            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-lock text-secondary"></i></span>
+              </div>
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+            </div>
+            <div class="text-danger" style="font-size: 14px;">Please enter correct password</div>
+          </div>
+           <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
+              </div>
+              <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "form-control", placeholder: "Password Confirmation" %>               
+            </div>
+            <div class="text-danger" style="font-size: 14px;">Please enter password confirmation</div>
+          </div>
+           <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-lg mb-3" %>
+        <%end%>
+        <p class="login-wrapper-footer-text">You already have an account?
+          <%= link_to "Log in here", new_session_path(resource_name) %></br>
+          <%= link_to "Didn't receive confirmation instructions?",  new_confirmation_path(resource_name)%>
+        </p>
+       <!--  <p class="login-wrapper-footer-text">
+          <%#= link_to "Didn't receive confirmation instructions?", new_session_path(resource_name)%>
+        </p> -->
+      </div>
+    </div>
+    <div class="col-md-7 px-0 d-none d-md-block">
+    <img class="mr-auto login-img" alt="login image" src=<%=asset_path('login-bg3.jpg')%> />
+    </div>
+  </div>
+</div>
