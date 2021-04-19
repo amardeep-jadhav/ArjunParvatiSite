@@ -10,6 +10,11 @@ import "../stylesheets/application"
 import "channels"
 import "bootstrap"
 import "@fortawesome/fontawesome-free/css/all"
+import "../src/core/jquery.3.2.1.min";
+import "../src/core/bootstrap.min";
+import "../src/core/popper.min";
+import "../src/atlantis.min";
+import "../src/plugin/jquery-ui-1.12.1.custom/jquery-ui.min";
 
 // import 'src/stylesheets/application'
 // const images = require.context('../images', true)

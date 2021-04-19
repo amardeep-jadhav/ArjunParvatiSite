@@ -27,8 +27,12 @@ line-height: 40px;
     height: 100px;
     width: 153px;
 }
-
-.nav-item a:hover,.nav-item.active a{
+.nav-item a:hover{
+    background-color: rgba(199,199,199,.2)!important;
+    border-radius: 4px;
+    color: #eeeeee !important;
+}
+.nav-item.active a{
     background-color: #007bff!important;
     border-radius: 4px;
     color: #eeeeee !important;
