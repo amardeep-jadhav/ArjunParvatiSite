@@ -32,12 +32,15 @@ line-height: 40px;
     height: 100px;
     width: 153px;
 }
-.nav-item a:hover{
-    background-color: rgba(199,199,199,.2)!important;
-    border-radius: 4px;
-    color: #eeeeee !important;
+header .navbar[class*=bg-] .navbar-nav>.nav-item>.nav-link{
+    color: rgba(0,0,0,.9);
+    font-size: 0.875rem;
 }
-.nav-item.active a{
+header .navbar[class*=bg-] .navbar-nav>.nav-item>a.nav-link:hover{
+    background-color: #eee!important;
+    color: rgba(0,0,0,.9);
+}
+header .navbar[class*=bg-] .navbar-nav>.nav-item.active>a.nav-link{
     background-color: #007bff!important;
     border-radius: 4px;
     color: #eeeeee !important;
