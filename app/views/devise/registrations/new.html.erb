@@ -46,7 +46,7 @@
               </div>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>               
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+            <div id="email_error" style="font-size: 14px;"></div>
           </div>
           <div class="form-group">
             <label for="password" class="sr-only">Password</label>
@@ -56,17 +56,17 @@
               </div>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter correct password</div>
+            <div id="password_error" style="font-size: 14px;"></div>
           </div>
            <div class="form-group">
             <label for="email" class="sr-only">Email</label>
             <div class="input-group">
               <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
+                <span class="input-group-text"><i class="fas fa-lock text-secondary"></i></span>
               </div>
               <%= f.password_field :password_confirmation, autocomplete: "current-password", class: "form-control", placeholder: "Password Confirmation" %>               
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter password confirmation</div>
+            <div id="password_confirmation_error" style="font-size: 14px;"></div>
           </div>
            <%= f.submit "Sign up", class: "btn btn-primary btn-block btn-lg mb-3" %>
         <%end%>
@@ -84,3 +84,49 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  $(document).ready(function () {
+    $("#new_user").validate({
+      rules: {
+        "user[email]": {
+          email: true,
+          required: true
+        },
+        "user[password]": {
+          required: true,
+          minlength: 8,
+          maxlength: 30
+        },
+        "user[password_confirmation]":{
+          required: true,
+          equalTo: "#user_password"
+        },
+      },
+      messages: {
+        "user[email]": {
+          required: "Email can not be blank"
+        },
+        "user[password]": {
+          required: "Password can not be blank"
+        },
+        "user[password_confirmation]": {
+          required: "Password Confirmation can not be blank"
+        },
+      },
+      errorPlacement: function (error, element) {
+        var name = $(element).attr("name");
+        var error_element = name.match(/\[(.*?)\]/)[1]+"_error";
+        error.appendTo($("#email_error"));
+        if ( error_element == "email_error") {
+          error.appendTo("#email_error");
+        } else if(error_element == "password_error"){
+          error.appendTo("#password_error");
+        }else{
+          error.appendTo("#password_confirmation_error");
+        }
+      },
+    });
+  });
+</script>
