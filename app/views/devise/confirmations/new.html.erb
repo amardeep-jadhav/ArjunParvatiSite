@@ -33,7 +33,7 @@
               </div>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>          
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+            <div id="email_error" style="font-size: 14px;"></div>
           </div>
            <%= f.submit "Resend confirmation instructions", class: "btn btn-primary btn-block btn-lg mb-3" %>
         <%end%>
@@ -50,3 +50,31 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $("#new_user").validate({
+      rules: {
+        "user[email]": {
+            email: true,
+            required: true
+        }
+      },
+      messages: {
+        "user[email]": {
+          required: "Email can not be blank"
+        }
+      },
+      errorPlacement: function (error, element) {
+        var name = $(element).attr("name");
+        var error_element = name.match(/\[(.*?)\]/)[1]+"_error";
+        error.appendTo($("#email_error"));
+        if ( error_element == "email_error") {
+          error.appendTo("#email_error");
+        } else {
+          error.appendTo("#password_error");
+        }
+      },
+    });
+  });
+</script>
