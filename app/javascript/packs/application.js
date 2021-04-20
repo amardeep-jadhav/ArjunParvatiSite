@@ -3,13 +3,14 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "../stylesheets/application"
-import "channels"
-import "bootstrap"
-import "@fortawesome/fontawesome-free/css/all"
+import Rails from "@rails/ujs";
+import Turbolinks from "turbolinks";
+import * as ActiveStorage from "@rails/activestorage";
+import "../stylesheets/application";
+import "channels";
+import "bootstrap";
+import "@fortawesome/fontawesome-free/css/all";
+import "jquery-validation";
 // import "../src/core/jquery.3.2.1.min";
 // import "../src/core/popper.min";
 // import "../src/core/bootstrap.min";

@@ -36,16 +36,16 @@
         <img class="navbar-brand mr-auto logo" src=<%=asset_path('logo.jpeg')%> style="width:152px;height:120px;" />
         </div>
         <h3 class="text-dark mb-3">Welcome Back!</h3>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, id: "new_user", url: session_path(resource_name)) do |f| %>
           <div class="form-group">
             <label for="email" class="sr-only">Email</label>
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-envelope text-secondary"></i></span>
               </div>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>               
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter valid e-mail id</div>
+            <div id="email_error" style="font-size: 14px;"></div>
           </div>
           <div class="form-group">
             <label for="password" class="sr-only">Password</label>
@@ -55,7 +55,7 @@
               </div>
               <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
             </div>
-            <div class="text-danger" style="font-size: 14px;">Please enter correct password</div>
+            <div id="password_error" style="font-size: 14px;"></div>
           </div>
           <div class="form-options-wrapper">
             <div class="custom-control custom-checkbox login-check-box">
@@ -77,3 +77,37 @@
   </div>
 </div>
     <!-- Login Screen Code -->
+
+<script>
+  $(document).ready(function () {
+    $("#new_user").validate({
+      rules: {
+        "user[email]": {
+            email: true,
+            required: true
+        },
+        "user[password]": {
+          required: true
+        }
+      },
+      messages: {
+        "user[email]": {
+          required: "Email can not be blank"
+        },
+        "user[password]": {
+          required: "Password can not be blank"
+        },
+      },
+      errorPlacement: function (error, element) {
+        var name = $(element).attr("name");
+        var error_element = name.match(/\[(.*?)\]/)[1]+"_error";
+        error.appendTo($("#email_error"));
+        if ( error_element == "email_error") {
+          error.appendTo("#email_error");
+        } else {
+          error.appendTo("#password_error");
+        }
+      },
+    });
+  });
+</script>
