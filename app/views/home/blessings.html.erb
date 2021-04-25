@@ -42,19 +42,21 @@
 <div class="container-fluid">
   <div class="row vh-100 bg-white">
     <div class="col-md-5 d-flex">
-      <div class="login-wrapper m-auto">
+      <div class="blessing-wrapper m-auto">
         <div class="brand-wrapper mb-5">
         </div>
-        <p class="login-wrapper-footer-text">
-    		The loss of my father will always sting. But now, everything that I do is in honor of him and celebrates his life.”</br></br>
+        <p class="blessing-text text-danger">
+          <span style="position: relative;top: -27px;">&#8220;</span>The loss of my father will always sting. But now, everything that I do is in honor of him and celebrates his life.<span style="position: relative;top: -17px;">&#8221;</span></br>
         </p>
-
-        <img class="mr-auto" style ="width: 100%;" alt="signature" src=<%=asset_path('signature.png')%> />
+        <div class="ml-auto clearfix">
+          <img class="float-right" style="width: 300px;text-align: right;" alt="signature" src=<%=asset_path('signature.png')%> />
+        </div>
       </div>
     </div>
     <div class="col-md-7 px-0 d-none d-md-block">
-    <img class="mr-auto login-img" style ="
-    width: 40%;" alt="login image" src=<%=asset_path('Father_and_Son.gif')%> />
+         <!-- <div class="blessing-bg"></div> -->
+  <img class="mr-auto blessing-bg"  style ="
+    width: 100%;" alt="login image" src=<%=asset_path('Anna_image.png')%> /> 
     </div>
   </div>
 </div>
@@ -92,3 +94,25 @@
     });
   });
 </script>
+<style>
+.blessing-text {
+  font-family: 'ReginaScript';
+  font-size: 3rem;
+  padding-left: 130px;
+  color: crimson !important;
+}
+.blessing-bg {
+  width: 100%;
+  padding: 0px 0px 0 384px;
+  height: calc( 100vh - 143px);
+  position: relative;
+  top: 142px;
+}
+.blessing-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 34px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #fff; }
+</style>

@@ -45,9 +45,14 @@ header .navbar[class*=bg-] .navbar-nav>.nav-item.active>a.nav-link{
     border-radius: 4px;
     color: #eeeeee !important;
 }
+header .navbar[class*=bg-] .navbar-nav>.nav-item.loginBtn>a:hover{
+    background-color: #1a2035!important;
+}
+header .navbar[class*=bg-] .navbar-nav>.nav-item.signUpBtn a:hover{
+    background-color: #e21a2d!important;
+}
 .nav-item.loginBtn a:hover,
 .nav-item.signUpBtn a:hover{
-    background-color: transparent!important;
     border-radius: 4px;
     color: #eeeeee !important;
 }
@@ -295,3 +300,23 @@ footer .footer-top .footer-links ul a {
       .form-options-wrapper {
         display: block; } }
 
+      /*  .blessing-bg {
+            background-image: url('~Anna_image.png');
+              background-size:     cover;                      
+              background-repeat:   no-repeat;
+              background-position: center center;              
+          } */
+
+          @font-face {
+            font-family: 'ReginaScript';
+            src: url('../src/fonts/reginascript/Regina_Script.eot');
+            src: url('../src/fonts/reginascript/Regina_Script.eot?#iefix') format('embedded-opentype'),
+                url('../src/fonts/reginascript/Regina_Script.woff2') format('woff2'),
+                url('../src/fonts/reginascript/Regina_Script.woff') format('woff'),
+                url('../src/fonts/reginascript/Regina_Script.ttf') format('truetype'),
+                url('../src/fonts/reginascript/Regina_Script.svg#Regina_Script') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
