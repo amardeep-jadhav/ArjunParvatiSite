@@ -1,0 +1,56 @@
+<!-- Login Screen Code -->
+<div class="container-fluid">
+  <div class="row vh-100 bg-white">
+    <div class="col-md-5 d-flex">
+      <div class="login-wrapper m-auto">
+        <div class="brand-wrapper mb-5">
+        <img class="navbar-brand mr-auto logo" src=<%=asset_path('logo.jpeg')%> style="width:152px;height:120px;" />
+        </div>
+        <p class="login-wrapper-footer-text">
+    		The loss of my father will always sting. But now, everything that I do is in honor of him and celebrates his life.”</br></br>
+
+    		 – Sachin Sanhamitra
+        </p>
+      </div>
+    </div>
+    <div class="col-md-7 px-0 d-none d-md-block">
+    <img class="mr-auto login-img" style ="
+    width: 40%;" alt="login image" src=<%=asset_path('Father_and_Son.gif')%> />
+    </div>
+  </div>
+</div>
+    <!-- Login Screen Code -->
+
+<script>
+  $(document).ready(function () {
+    $("#new_user").validate({
+      rules: {
+        "user[email]": {
+            email: true,
+            required: true
+        },
+        "user[password]": {
+          required: true
+        }
+      },
+      messages: {
+        "user[email]": {
+          required: "Email can not be blank"
+        },
+        "user[password]": {
+          required: "Password can not be blank"
+        },
+      },
+      errorPlacement: function (error, element) {
+        var name = $(element).attr("name");
+        var error_element = name.match(/\[(.*?)\]/)[1]+"_error";
+        error.appendTo($("#email_error"));
+        if ( error_element == "email_error") {
+          error.appendTo("#email_error");
+        } else {
+          error.appendTo("#password_error");
+        }
+      },
+    });
+  });
+</script>
