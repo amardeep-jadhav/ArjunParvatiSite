@@ -7,8 +7,14 @@ ul, li {
     padding: 0px;
     margin: 0px;
 }
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    height: 100%!important;
+}
 main.container-fluid {
-    padding: 140px 15px 0;
+    padding: 133px 15px 0;
 }
 .top-strip {
 background-color: #eee !important;
