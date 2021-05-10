@@ -15,10 +15,10 @@ ul, li {
 }
 .logo-header,
 .sidebar, .sidebar[data-background-color=white] {
-    width: 295px!important;
+    width: 295px;
 }
 .main-panel {
-    width: calc(100% - 295px)!important;
+    width: calc(100% - 295px);
 }
 main.container-fluid {
     padding: 133px 15px 0; 
