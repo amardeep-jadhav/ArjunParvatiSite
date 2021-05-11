@@ -21,7 +21,7 @@ ul, li {
     width: calc(100% - 295px);
 }
 main.container-fluid {
-    padding: 133px 15px 0; 
+    padding: 142px 15px 0; 
 }
 .top-strip {
 background-color: #eee !important;
@@ -43,7 +43,7 @@ line-height: 40px;
 }
 .logo{
     height: 100px;
-    width: 153px;
+    width: 210px;
 }
 header .navbar[class*=bg-] .navbar-nav>.nav-item>.nav-link{
     color: rgba(0,0,0,.9);
